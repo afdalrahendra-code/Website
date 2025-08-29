@@ -5,33 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMA Nusantara - Sekolah Unggulan</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .hero-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        .nav-link {
-            transition: color 0.3s ease;
-        }
-        .nav-link:hover {
-            color: #667eea;
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="font-sans">
     <!-- Navigation -->
@@ -328,85 +302,314 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+    <script src="js/script.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'976d98008196fe23',t:'MTc1NjQ4NjcxMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
 
-        // Smooth scrolling function
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            const navHeight = 80;
-            const elementPosition = element.offsetTop - navHeight;
-            
-            window.scrollTo({
-                top: elementPosition,
-                behavior: 'smooth'
-            });
-        }
-
-        // Add click handlers to navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                scrollToSection(targetId);
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMA Nusantara - Sekolah Unggulan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">SN</span>
+                    </div>
+                    <span class="text-xl font-bold text-gray-800">SMA Nusantara</span>
+                </div>
                 
-                // Close mobile menu if open
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Form submission handler
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(event.target);
-            const name = event.target.querySelector('input[type="text"]').value;
-            
-            // Show success message
-            alert(`Terima kasih ${name}! Ini adalah demo formulir. Pesan Anda telah diterima dan akan diproses oleh tim kami.`);
-            
-            // Reset form
-            event.target.reset();
-        }
-
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Active navigation highlighting
-        window.addEventListener('scroll', () => {
-            const sections = ['beranda', 'tentang', 'program', 'fasilitas', 'kontak'];
-            const navHeight = 80;
-            
-            sections.forEach(sectionId => {
-                const section = document.getElementById(sectionId);
-                const navLink = document.querySelector(`a[href="#${sectionId}"]`);
+                <div class="hidden md:flex space-x-8">
+                    <a href="#beranda" class="nav-link text-gray-700 font-medium">Beranda</a>
+                    <a href="#tentang" class="nav-link text-gray-700 font-medium">Tentang</a>
+                    <a href="#program" class="nav-link text-gray-700 font-medium">Program</a>
+                    <a href="#fasilitas" class="nav-link text-gray-700 font-medium">Fasilitas</a>
+                    <a href="#kontak" class="nav-link text-gray-700 font-medium">Kontak</a>
+                </div>
                 
-                if (section && navLink) {
-                    const sectionTop = section.offsetTop - navHeight - 100;
-                    const sectionBottom = sectionTop + section.offsetHeight;
-                    const scrollPosition = window.scrollY;
-                    
-                    if (scrollPosition >= sectionTop && scrollPosition < se
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="#beranda" class="block py-2 text-gray-700">Beranda</a>
+                <a href="#tentang" class="block py-2 text-gray-700">Tentang</a>
+                <a href="#program" class="block py-2 text-gray-700">Program</a>
+                <a href="#fasilitas" class="block py-2 text-gray-700">Fasilitas</a>
+                <a href="#kontak" class="block py-2 text-gray-700">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-bg min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 text-center text-white">
+            <div class="fade-in">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">SMA Nusantara</h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">Membangun Generasi Unggul dan Berkarakter</p>
+                <div class="space-x-4">
+                    <button onclick="scrollToSection('tentang')" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">
+                        Pelajari Lebih Lanjut
+                    </button>
+                    <button onclick="scrollToSection('kontak')" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition duration-300">
+                        Hubungi Kami
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Tentang SMA Nusantara</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Sekolah unggulan yang berkomitmen mengembangkan potensi siswa melalui pendidikan berkualitas, 
+                    pembentukan karakter, dan persiapan masa depan yang gemilang.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover fade-in">
+                    <div class="text-4xl mb-4">🎓</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Pendidikan Berkualitas</h3>
+                    <p class="text-gray-600">Kurikulum terdepan dengan metode pembelajaran inovatif dan guru-guru berpengalaman.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover fade-in">
+                    <div class="text-4xl mb-4">🌟</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Pembentukan Karakter</h3>
+                    <p class="text-gray-600">Mengembangkan nilai-nilai moral, etika, dan kepemimpinan dalam setiap aspek pembelajaran.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover fade-in">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Persiapan Masa Depan</h3>
+                    <p class="text-gray-600">Mempersiapkan siswa untuk sukses di perguruan tinggi dan karir masa depan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="program" class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Program Akademik</h2>
+                <p class="text-xl text-gray-600">Pilihan program studi yang sesuai dengan minat dan bakat siswa</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-8 rounded-lg text-white card-hover fade-in">
+                    <h3 class="text-2xl font-bold mb-4">IPA (Sains)</h3>
+                    <p class="mb-4">Program untuk siswa yang tertarik dengan matematika, fisika, kimia, dan biologi.</p>
+                    <ul class="space-y-2 text-sm opacity-90">
+                        <li>• Matematika Lanjut</li>
+                        <li>• Fisika Eksperimental</li>
+                        <li>• Kimia Organik</li>
+                        <li>• Biologi Molekuler</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-500 to-green-600 p-8 rounded-lg text-white card-hover fade-in">
+                    <h3 class="text-2xl font-bold mb-4">IPS (Sosial)</h3>
+                    <p class="mb-4">Program untuk siswa yang tertarik dengan ilmu sosial, ekonomi, dan humaniora.</p>
+                    <ul class="space-y-2 text-sm opacity-90">
+                        <li>• Ekonomi Bisnis</li>
+                        <li>• Sosiologi</li>
+                        <li>• Geografi</li>
+                        <li>• Sejarah Indonesia</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-500 to-purple-600 p-8 rounded-lg text-white card-hover fade-in">
+                    <h3 class="text-2xl font-bold mb-4">Bahasa</h3>
+                    <p class="mb-4">Program untuk siswa yang tertarik dengan linguistik dan sastra.</p>
+                    <ul class="space-y-2 text-sm opacity-90">
+                        <li>• Bahasa Indonesia</li>
+                        <li>• Bahasa Inggris</li>
+                        <li>• Sastra</li>
+                        <li>• Bahasa Asing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="fasilitas" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Fasilitas Sekolah</h2>
+                <p class="text-xl text-gray-600">Fasilitas lengkap untuk mendukung proses pembelajaran yang optimal</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in">
+                    <div class="text-3xl mb-3">🏫</div>
+                    <h3 class="font-bold text-gray-800 mb-2">Ruang Kelas Modern</h3>
+                    <p class="text-gray-600 text-sm">Ruang kelas ber-AC dengan teknologi multimedia</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in">
+                    <div class="text-3xl mb-3">🔬</div>
+                    <h3 class="font-bold text-gray-800 mb-2">Laboratorium</h3>
+                    <p class="text-gray-600 text-sm">Lab Fisika, Kimia, Biologi, dan Komputer</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in">
+                    <div class="text-3xl mb-3">📚</div>
+                    <h3 class="font-bold text-gray-800 mb-2">Perpustakaan</h3>
+                    <p class="text-gray-600 text-sm">Koleksi buku lengkap dan area baca yang nyaman</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in">
+                    <div class="text-3xl mb-3">⚽</div>
+                    <h3 class="font-bold text-gray-800 mb-2">Lapangan Olahraga</h3>
+                    <p class="text-gray-600 text-sm">Lapangan basket, voli, dan sepak bola</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold mb-4">Hubungi Kami</h2>
+                <p class="text-xl opacity-90">Bergabunglah dengan keluarga besar SMA Nusantara</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-6">Informasi Kontak</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="text-2xl">📍</div>
+                            <div>
+                                <p class="font-semibold">Alamat</p>
+                                <p class="opacity-90">Jl. Pendidikan No. 123, Jakarta Selatan 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3">
+                            <div class="text-2xl">📞</div>
+                            <div>
+                                <p class="font-semibold">Telepon</p>
+                                <p class="opacity-90">(021) 1234-5678</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3">
+                            <div class="text-2xl">✉️</div>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <p class="opacity-90">info@smanusantara.sch.id</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3">
+                            <div class="text-2xl">🕒</div>
+                            <div>
+                                <p class="font-semibold">Jam Operasional</p>
+                                <p class="opacity-90">Senin - Jumat: 07:00 - 16:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-6">Formulir Kontak Demo</h3>
+                    <form class="space-y-4" onsubmit="handleFormSubmit(event)">
+                        <div>
+                            <input type="text" placeholder="Nama Lengkap" required 
+                                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-white">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Email" required 
+                                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-white">
+                        </div>
+                        <div>
+                            <input type="tel" placeholder="Nomor Telepon" 
+                                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-white">
+                        </div>
+                        <div>
+                            <textarea placeholder="Pesan Anda" rows="4" required 
+                                      class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-white resize-none"></textarea>
+                        </div>
+                        <button type="submit" 
+                                class="w-full bg-white text-purple-600 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                            Kirim Pesan (Demo)
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold">SN</span>
+                        </div>
+                        <span class="text-lg font-bold">SMA Nusantara</span>
+                    </div>
+                    <p class="text-gray-400">Membangun generasi unggul dan berkarakter untuk masa depan Indonesia yang gemilang.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Menu Utama</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#beranda" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="#tentang" class="hover:text-white transition">Tentang</a></li>
+                        <li><a href="#program" class="hover:text-white transition">Program</a></li>
+                        <li><a href="#fasilitas" class="hover:text-white transition">Fasilitas</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Program</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>IPA (Sains)</li>
+                        <li>IPS (Sosial)</li>
+                        <li>Bahasa</li>
+                        <li>Ekstrakurikuler</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Kontak</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📞 (021) 1234-5678</li>
+                        <li>✉️ info@smanusantara.sch.id</li>
+                        <li>📍 Jakarta Selatan</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 SMA Nusantara. Semua hak dilindungi undang-undang.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
